@@ -58,4 +58,10 @@ float triangle::Surface() {
 	return ((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y)) / 2.0;
 }
 
-
+bool triangle::isEquilateral() {
+	bool equilateral = false;
+	if (getAB() == getAC() && getAC() == getBC()) {
+		equilateral = true;
+	}
+	return equilateral;
+}
