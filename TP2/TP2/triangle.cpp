@@ -40,4 +40,22 @@ void triangle::setPointC(point c) {
 	this->c = c;
 }
 
+float triangle::Base() {
+	float base;
+	if (getAB() > getBC()) {
+		base = getAB();
+	}
+	else {
+		base = getBC();
+	}
+	if (base < getAC()) {
+		base = getAC();
+	}
+	return base;
+}
+
+float triangle::Surface() {
+	return ((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y)) / 2.0;
+}
+
 

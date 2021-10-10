@@ -23,7 +23,7 @@ public:
 
     float Base();
     float Hauteur();
-    double Surface();
+    float Surface();
     float Longueurs();
 
     bool isIsosceles();
