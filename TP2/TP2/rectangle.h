@@ -9,6 +9,7 @@ private :
 	int longueur, largeur;
 	point coinSupGauche;
 public :
+	rectangle(int longueur, int largeur, point coinSupGauche);
 	/*Getter*/
 	int getLongueur();
 	int getLargeur();

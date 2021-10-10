@@ -15,15 +15,15 @@ point triangle::getPointC() {
 }
 
 float triangle::getAB() {
-	sqrt(pow(this->a.x - this->b.x, 2) + pow(this->a.y - this->b.y, 2));
+	return sqrt(pow(this->a.x - this->b.x, 2) + pow(this->a.y - this->b.y, 2));
 }
 
 float triangle::getAC() {
-	sqrt(pow(this->a.x - this->c.x, 2) + pow(this->a.y - this->c.y, 2));
+	return sqrt(pow(this->a.x - this->c.x, 2) + pow(this->a.y - this->c.y, 2));
 }
 
 float triangle::getBC() {
-	sqrt(pow(this->b.x - this->c.x, 2) + pow(this->b.y - this->c.y, 2));
+	return sqrt(pow(this->b.x - this->c.x, 2) + pow(this->b.y - this->c.y, 2));
 }
 
 /*Setter*/
@@ -39,4 +39,5 @@ void triangle::setPointB(point b) {
 void triangle::setPointC(point c) {
 	this->c = c;
 }
+
 

@@ -1,5 +1,11 @@
 #include "rectangle.h"
 
+rectangle::rectangle(int longueur, int largeur, point coinSupGauche) {
+	this->setLongueur(longueur);
+	this->setLargeur(largeur);
+	this->setCoinSupGauche(coinSupGauche);
+}
+
 /*Getter*/
 int rectangle::getLongueur() {
 	return this->longueur;
