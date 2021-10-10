@@ -15,6 +15,8 @@ public :
 	void setLargeur(int largeur);
 	void setCoinSupGauche(point coinSupGauche);
 
+	int perimetre(int largeur, int longueur);
+	int surface(int largeur, int longueur);
 
 };
 
