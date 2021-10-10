@@ -1,9 +1,33 @@
 #include "rectangle.h"
 
-int perimetre(int largeur, int longueur) {
+/*Getter*/
+int rectangle::getLongueur() {
+	return this->longueur;
+}
+int rectangle::getLargeur() {
+	return this->largeur;
+}
+point rectangle::getCoinSupGauche() {
+	return this->coinSupGauche;
+}
+/*Setter*/
+
+void rectangle::setLongueur(int longueur) {
+	this->longueur = longueur;
+}
+
+void rectangle::setLargeur(int largeur) {
+	this->largeur = largeur;
+}
+
+void rectangle::setCoinSupGauche(point coinSupGauche) {
+	this->coinSupGauche = coinSupGauche;
+}
+
+int rectangle::perimetre(int largeur, int longueur) {
 	return (2 * largeur) + (2 * longueur);
 }
 
-int surface(int largeur, int longueur) {
+int rectangle::surface(int largeur, int longueur) {
 	return largeur * longueur;
 }

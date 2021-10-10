@@ -1,5 +1,8 @@
-#pragma once
+#ifndef TP2_CPP_RECTANGLE_H
+#define TP2_CPP_RECTANGLE_H
+
 #include "point.h";
+
 class rectangle
 {
 private :
@@ -10,6 +13,7 @@ public :
 	int getLongueur();
 	int getLargeur();
 	point getCoinSupGauche();
+	
 	/*Setter*/
 	void setLongueur(int longueur);
 	void setLargeur(int largeur);
@@ -19,4 +23,4 @@ public :
 	int surface(int largeur, int longueur);
 
 };
-
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TP2_CPP_POINT_H
+#define TP2_CPP_POINT_H
 
 struct point
 {
@@ -6,3 +7,4 @@ struct point
 	float y;
 };
 
+#endif
