@@ -31,9 +31,7 @@ float cercle::surface() {
 }
 
 bool cercle::surCercle(point point) {
-
 	return pow(point.x - centre.x, 2) + pow(point.y - centre.y, 2) == pow(diametre / 2, 2);
-	
 }
 
 bool cercle::dansCercle(point point) {
