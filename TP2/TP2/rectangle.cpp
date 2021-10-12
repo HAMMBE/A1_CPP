@@ -16,8 +16,8 @@ int rectangle::getLargeur() {
 point rectangle::getCoinSupGauche() {
 	return coinSupGauche;
 }
-/*Setter*/
 
+/*Setter*/
 void rectangle::setLongueur(int longueur) {
 	this->longueur = longueur;
 }

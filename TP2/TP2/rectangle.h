@@ -11,6 +11,7 @@ private :
 public :
 	rectangle();
 	rectangle(int longueur, int largeur);
+	
 	/*Getter*/
 	int getLongueur();
 	int getLargeur();
