@@ -1,42 +1,44 @@
 #include "triangle.h"
 #include <math.h>
 
+triangle::triangle(const point& pointA, const point& pointB, const point& pointC) : a(pointA), b(pointB), c(pointC){
+}
 /*Getter*/
 point triangle::getPointA(){
-	return this->a;
+	return a;
 }
 
 point triangle::getPointB() {
-	return this->b;
+	return b;
 }
 
 point triangle::getPointC() {
-	return this->c;
+	return c;
 }
 
 float triangle::getAB() {
-	return sqrt(pow(this->a.x - this->b.x, 2) + pow(this->a.y - this->b.y, 2));
+	return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 }
 
 float triangle::getAC() {
-	return sqrt(pow(this->a.x - this->c.x, 2) + pow(this->a.y - this->c.y, 2));
+	return sqrt(pow(a.x - c.x, 2) + pow(a.y - c.y, 2));
 }
 
 float triangle::getBC() {
-	return sqrt(pow(this->b.x - this->c.x, 2) + pow(this->b.y - this->c.y, 2));
+	return sqrt(pow(b.x - c.x, 2) + pow(b.y - c.y, 2));
 }
 
 /*Setter*/
 
-void triangle::setPointA(point a) {
+void triangle::setPointA(const point& a) {
 	this->a = a;
 }
 
-void triangle::setPointB(point b) {
+void triangle::setPointB(const point& b) {
 	this->b = b;
 }
 
-void triangle::setPointC(point c) {
+void triangle::setPointC(const point& c) {
 	this->c = c;
 }
 
@@ -58,10 +60,37 @@ float triangle::Surface() {
 	return ((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y)) / 2.0;
 }
 
-bool triangle::isEquilateral() {
+bool triangle::estEquilateral() {
 	bool equilateral = false;
 	if (getAB() == getAC() && getAC() == getBC()) {
 		equilateral = true;
 	}
 	return equilateral;
+}
+float triangle::Hauteur() {
+	return 2 * Surface() / Base();
+}
+
+bool triangle::estIsoceles() {
+	if (estEquilateral) {
+		return false;
+	}
+	
+	return getAB() == getAC() || getAB() == getBC() || getAC() == getBC();
+
+}
+float triangle::Longueurs(){
+
+}
+bool triangle::estRectangle() {
+	if (getAB() == Base())
+	{
+		return pow(Base(), 2) == pow(getBC(), 2) + pow(getAC(), 2);
+	}
+	if (getAC() == Base()) {
+		return pow(Base(), 2) == pow(getBC(), 2) + pow(getAB(), 2);
+	}
+	if (getBC() == Base()) {
+		return pow(Base(), 2) == pow(getAB(), 2) + pow(getAC(), 2);
+	}
 }

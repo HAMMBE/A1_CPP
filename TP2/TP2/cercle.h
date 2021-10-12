@@ -8,6 +8,9 @@ class cercle
 		int diametre;
 
 	public:
+
+		cercle(int diametre, const point& centre);
+
 		point getCentre();
 		int getDiametre();
 

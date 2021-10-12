@@ -5,6 +5,11 @@ struct point
 {
 	float x;
 	float y;
+	
+	point();
+	point(float x, float y);
+	
 };
+
 
 #endif

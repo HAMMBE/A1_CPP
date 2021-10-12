@@ -8,6 +8,8 @@ private:
     point a, b, c;
 
 public:
+    triangle(const point& pointA, const point& pointB, const point& pointC);
+
     /*Getter*/
     point getPointA();
     point getPointB();
@@ -17,19 +19,18 @@ public:
     float getBC();
     
     /*Setter*/
-    void setPointA(point a);
-    void setPointB(point b);
-    void setPointC(point c);
+    void setPointA(const point& a);
+    void setPointB(const point& b);
+    void setPointC(const point& c);
 
     float Base();
     float Hauteur();
     float Surface();
     float Longueurs();
 
-    bool isIsosceles();
-    bool isRight();
-    bool isEquilateral();
-    void triangle();
+    bool estIsoceles();
+    bool estRectangle();
+    bool estEquilateral();
 };
 
 #endif

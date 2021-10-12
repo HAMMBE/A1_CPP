@@ -1,20 +1,20 @@
 #include "rectangle.h"
 
-rectangle::rectangle(int longueur, int largeur, point coinSupGauche) {
-	this->setLongueur(longueur);
-	this->setLargeur(largeur);
-	this->setCoinSupGauche(coinSupGauche);
+rectangle::rectangle() {}
+rectangle::rectangle(int longueur, int largeur) {
+	this->longueur = longueur;
+	this->largeur = largeur;
 }
 
 /*Getter*/
 int rectangle::getLongueur() {
-	return this->longueur;
+	return longueur;
 }
 int rectangle::getLargeur() {
-	return this->largeur;
+	return largeur;
 }
 point rectangle::getCoinSupGauche() {
-	return this->coinSupGauche;
+	return coinSupGauche;
 }
 /*Setter*/
 
@@ -26,7 +26,7 @@ void rectangle::setLargeur(int largeur) {
 	this->largeur = largeur;
 }
 
-void rectangle::setCoinSupGauche(point coinSupGauche) {
+void rectangle::setCoinSupGauche(const point& coinSupGauche) {
 	this->coinSupGauche = coinSupGauche;
 }
 

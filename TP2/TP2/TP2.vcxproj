@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cercle.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="rectangle.cpp" />
     <ClCompile Include="TP2.cpp" />
     <ClCompile Include="triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cercle.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="rectangle.h" />
     <ClInclude Include="triangle.h" />
