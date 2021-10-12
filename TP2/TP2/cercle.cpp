@@ -6,6 +6,7 @@ cercle::cercle(int diametre, const point& centre) : diametre(diametre), centre(c
 {
 }
 
+/*Getters*/
 point cercle::getCentre() {
 	return centre;
 }
@@ -13,7 +14,7 @@ point cercle::getCentre() {
 int cercle::getDiametre() {
 	return diametre;
 }
-
+/*Setters*/
 void cercle::setCentre(point centre) {
 	this->centre = centre;
 }

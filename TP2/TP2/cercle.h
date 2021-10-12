@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef TP2_CPP_CERCLE_H
+#define TP2_CPP_CERCLE_H
 #include"point.h"
 class cercle
 {
@@ -22,4 +22,4 @@ class cercle
 		bool surCercle(point point);
 		bool dansCercle(point point);
 };
-
+#endif

@@ -8,8 +8,6 @@ struct point
 	
 	point();
 	point(float x, float y);
-	
 };
-
 
 #endif

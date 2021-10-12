@@ -27,8 +27,10 @@ int main()
     point trianglePoint2 = point(1, 0);
     point trianglePoint3 = point(0, 1);
     triangle triangle1 = triangle(trianglePoint1, trianglePoint2, trianglePoint3);
-    std::cout << triangle1.Hauteur() << std::endl;
-    std::cout << triangle1.estRectangle();
+    std::cout << "Hauteur : " << triangle1.Hauteur() << std::endl;
+    std::cout << "Est rectangle : " << triangle1.estRectangle() << std::endl;
+    std::cout << "Aire : " << triangle1.Surface() << std::endl;
+    std::cout << "Est Isoceles : " << triangle1.estIsoceles() << std::endl;
     
 
 }

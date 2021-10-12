@@ -73,6 +73,7 @@ double triangle::Hauteur() {
 }
 
 bool triangle::estIsoceles() {
+	//si le triangles est equilateral il ne peut pas être isocele
 	if (estEquilateral()) {
 		return false;
 	}
@@ -80,17 +81,17 @@ bool triangle::estIsoceles() {
 	return getAB() == getAC() || getAB() == getBC() || getAC() == getBC();
 
 }
-double triangle::Longueurs(){
-	return 1.0;
-}
+
 bool triangle::estRectangle() {
+	//*100 /100 permet d'utiliser la fonction round() qui arrondi a l entier tout en gardant des millième on fait ca pour éviter 
+	//les erreurs d'arrondi.
 	
 	if (getAB() == Base())
 	{
-		return pow(Base(), 2) == pow(getBC(), 2) + pow(getAC(), 2);
+		return round(pow(Base(), 2) * 100) / 100 == round(pow(getBC(), 2) * 100) / 100 + round(pow(getAC(), 2) * 100) / 100;
 	}
 	if (getAC() == Base()) {
-		return pow(Base(), 2) == pow(getBC(), 2) + pow(getAB(), 2);
+		return round(pow(Base(), 2) * 100) / 100 == round(pow(getBC(), 2) * 100) / 100 + round(pow(getAB(), 2) * 100) / 100;
 	}
 	if (getBC() == Base()) {
 		return round(pow(Base(), 2)*100)/100 == round(pow(getAB(), 2)*100)/100 + round(pow(getAC(), 2)*100)/100;
