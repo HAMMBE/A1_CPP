@@ -93,6 +93,6 @@ bool triangle::estRectangle() {
 		return pow(Base(), 2) == pow(getBC(), 2) + pow(getAB(), 2);
 	}
 	if (getBC() == Base()) {
-		return pow(Base(), 2) == pow(getAB(), 2) + pow(getAC(), 2);
+		return round(pow(Base(), 2)*100)/100 == round(pow(getAB(), 2)*100)/100 + round(pow(getAC(), 2)*100)/100;
 	}
 }
