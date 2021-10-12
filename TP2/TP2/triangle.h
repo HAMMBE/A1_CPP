@@ -14,19 +14,19 @@ public:
     point getPointA();
     point getPointB();
     point getPointC();
-    float getAB();
-    float getAC();
-    float getBC();
+    double getAB();
+    double getAC();
+    double getBC();
     
     /*Setter*/
     void setPointA(const point& a);
     void setPointB(const point& b);
     void setPointC(const point& c);
 
-    float Base();
-    float Hauteur();
-    float Surface();
-    float Longueurs();
+    double Base();
+    double Hauteur();
+    double Surface();
+    double Longueurs();
 
     bool estIsoceles();
     bool estRectangle();

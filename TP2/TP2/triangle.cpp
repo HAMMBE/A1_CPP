@@ -16,15 +16,16 @@ point triangle::getPointC() {
 	return c;
 }
 
-float triangle::getAB() {
+double triangle::getAB() {
 	return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 }
 
-float triangle::getAC() {
+
+double triangle::getAC() {
 	return sqrt(pow(a.x - c.x, 2) + pow(a.y - c.y, 2));
 }
 
-float triangle::getBC() {
+double triangle::getBC() {
 	return sqrt(pow(b.x - c.x, 2) + pow(b.y - c.y, 2));
 }
 
@@ -42,8 +43,8 @@ void triangle::setPointC(const point& c) {
 	this->c = c;
 }
 
-float triangle::Base() {
-	float base;
+double triangle::Base() {
+	double base;
 	if (getAB() > getBC()) {
 		base = getAB();
 	}
@@ -56,7 +57,7 @@ float triangle::Base() {
 	return base;
 }
 
-float triangle::Surface() {
+double triangle::Surface() {
 	return ((b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y)) / 2.0;
 }
 
@@ -67,22 +68,23 @@ bool triangle::estEquilateral() {
 	}
 	return equilateral;
 }
-float triangle::Hauteur() {
+double triangle::Hauteur() {
 	return 2 * Surface() / Base();
 }
 
 bool triangle::estIsoceles() {
-	if (estEquilateral) {
+	if (estEquilateral()) {
 		return false;
 	}
 	
 	return getAB() == getAC() || getAB() == getBC() || getAC() == getBC();
 
 }
-float triangle::Longueurs(){
-
+double triangle::Longueurs(){
+	return 1.0;
 }
 bool triangle::estRectangle() {
+	
 	if (getAB() == Base())
 	{
 		return pow(Base(), 2) == pow(getBC(), 2) + pow(getAC(), 2);

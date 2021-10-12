@@ -5,26 +5,30 @@
 #include<math.h>
 #include"point.h"
 #include"rectangle.h"
+#include"cercle.h"
+#include"triangle.h"
 
 int main()
 {
     point pointRectangle = point(0, 0);
-    rectangle rectangle = rectangle();
+    rectangle rectangle1 = rectangle();
 
 
-    Point pointCircle = Point(0, 0);
-    Circle circle = Circle(pointCircle, 4);
-    circle.Display();
+    point pointCircle = point(0, 0);
+    cercle circle = cercle(4, pointCircle);
+    
 
-    std::cout << "Sur cercle " << circle.isOnCircle(Point(0, 2)) << std::endl;
+    std::cout << "Sur cercle " << circle.surCercle(point(0, 2)) << std::endl;
 
-    std::cout << "Dans cercle " << circle.isInCircle(Point(0, 1)) << std::endl;
-    std::cout << "Pas Dans cercle " << circle.isInCircle(Point(0, 3)) << std::endl;
+    std::cout << "Dans cercle " << circle.dansCercle(point(0, 1)) << std::endl;
+    std::cout << "Pas Dans cercle " << circle.dansCercle(point(0, 3)) << std::endl;
 
-    Point trianglePoint1 = Point(0, 0);
-    Point trianglePoint2 = Point(1, 0);
-    Point trianglePoint3 = Point(0, 1);
-    Triangle triangle = Triangle(trianglePoint1, trianglePoint2, trianglePoint3);
-    triangle.Display();
+    point trianglePoint1 = point(0, 0);
+    point trianglePoint2 = point(1, 0);
+    point trianglePoint3 = point(0, 1);
+    triangle triangle1 = triangle(trianglePoint1, trianglePoint2, trianglePoint3);
+    std::cout << triangle1.Hauteur() << std::endl;
+    std::cout << triangle1.estRectangle();
+    
 
 }

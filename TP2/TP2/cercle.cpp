@@ -27,7 +27,7 @@ float cercle::perimetre() {
 }
 
 float cercle::surface() {
-	return pow(M_PI * diametre / 2, 2);
+	return pow(M_PI * (diametre / 2), 2);
 }
 
 bool cercle::surCercle(point point) {
