@@ -2,9 +2,7 @@
 #define _USE_MATH_DEFINES
 #include "math.h"
 
-cercle::cercle(int diametre, const point& centre) : diametre(diametre), centre(centre)
-{
-}
+cercle::cercle(int diametre, const point& centre) : diametre(diametre), centre(centre){}
 
 /*Getters*/
 point cercle::getCentre() {
@@ -14,6 +12,7 @@ point cercle::getCentre() {
 int cercle::getDiametre() {
 	return diametre;
 }
+
 /*Setters*/
 void cercle::setCentre(point centre) {
 	this->centre = centre;

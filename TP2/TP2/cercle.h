@@ -10,10 +10,12 @@ class cercle
 	public:
 
 		cercle(int diametre, const point& centre);
-
+		
+		/*Getters*/
 		point getCentre();
 		int getDiametre();
 
+		/*Setters*/
 		void setCentre(point centre);
 		void setDiametre(int diametre);
 
