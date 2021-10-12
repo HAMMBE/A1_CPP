@@ -2,10 +2,12 @@
 //
 
 #include <iostream>
-
 #include<math.h>
+#include"point.h"
+#include"rectangle.h"
+
 int main()
 {
-    std::cout << "test: " << ((8 - 12) * (2 - 6) - (13 - 12) * (2 - 6)) / 2.0 << std::endl;
+    //std::cout << "test: " << ((8 - 12) * (2 - 6) - (13 - 12) * (2 - 6)) / 2.0 << std::endl;
     std::cout << "Hello World!\n";
 }

@@ -29,6 +29,7 @@ public:
     bool isIsosceles();
     bool isRight();
     bool isEquilateral();
+    void triangle();
 };
 
 #endif
