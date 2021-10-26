@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include"GrilleMorpion.h"
+#include "Jeu.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
     GrilleMorpion grille1 = GrilleMorpion();
     grille1.afficheGrille();
+    Jeu jeu1 = Jeu();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

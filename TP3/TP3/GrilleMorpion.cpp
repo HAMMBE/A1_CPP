@@ -85,3 +85,7 @@ bool GrilleMorpion::victoireJoueur(int idJoueur) {
 	}
 	return false;
 }
+
+void GrilleMorpion::ajoutJeton(int ligne, int colonne, int idJoueur) {
+	grille[ligne][colonne] = idJoueur;
+}

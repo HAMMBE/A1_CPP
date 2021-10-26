@@ -10,7 +10,7 @@ public :
 	bool estPleine();
 	
 	void afficheGrille();
-	void ajoutJeton(int idCase);
+	void ajoutJeton(int ligne, int colonne, int idJoueur);
 
 private:
 	std::array<std::array<int, 3>,3> grille;
