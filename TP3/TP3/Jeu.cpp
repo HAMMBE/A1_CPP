@@ -50,3 +50,37 @@ void Jeu::felicitation(int idJoueur) {
 	std::cout << "Le joueur " << idJoueur << " gagne la partie !";
 }
 
+void Jeu::jeuP4(){
+	int colonneJ;
+	P4 = GrilleP4();
+	P4.afficheGrille();
+	while (!fin) {
+		std::cout << "Insérrez la colonne (entre 0 et 7) : ";
+		std::cin >> colonneJ;
+		P4.ajoutJeton(colonneJ, 1);
+		P4.afficheGrille();
+		if (P4.estPleine()) {
+			fin = true;
+		}
+		if (P4.victoireJoueur(1)) {
+			fin = true;
+			felicitation(1);
+
+		}
+		else if (!fin) {
+			std::cout << "Au tour du Joueur 2 : \n";
+			std::cout << "Insérrez la colonne (entre 0 et 7) : ";
+			std::cin >> colonneJ;
+			P4.ajoutJeton(colonneJ, 2);
+			P4.afficheGrille();
+			if (P4.victoireJoueur(2)) {
+				fin = true;
+				felicitation(2);
+			}
+			if (P4.estPleine()) {
+				fin = true;
+			}
+		}
+	}
+}
+
