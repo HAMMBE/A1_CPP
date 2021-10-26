@@ -22,6 +22,7 @@ bool GrilleMorpion::estPleine() {
 			}
 		}
 	}
+	std::cout << "La grille est pleine égalité !";
 	return true;
 }
 

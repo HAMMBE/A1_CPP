@@ -20,10 +20,15 @@ void Jeu::jeuMorpion(){
 		morpion.ajoutJeton(ligneJ, colonneJ, 1);
 		morpion.afficheGrille();
 		
+		if (morpion.estPleine()) {
+			fin = true;
+		}
+
 		if (morpion.victoireJoueur(1)) {
 			fin = true;
+			felicitation(1);
 
-		}else {
+		}else if(!fin) {
 			std::cout << "Au tour du Joueur 2 : \n";
 			std::cout << "Insérrez la ligne (entre 0 et 2) : ";
 			std::cin >> ligneJ;
@@ -31,11 +36,17 @@ void Jeu::jeuMorpion(){
 			std::cin >> colonneJ;
 			morpion.ajoutJeton(ligneJ, colonneJ, 2);
 			morpion.afficheGrille();
+			if (morpion.victoireJoueur(2)) {
+				fin = true;
+				felicitation(2);
+			}
+
 		}
 
 	}
-
-
 }
 
+void Jeu::felicitation(int idJoueur) {
+	std::cout << "Le joueur " << idJoueur << " gagne la partie !";
+}
 

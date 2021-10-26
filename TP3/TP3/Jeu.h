@@ -11,5 +11,6 @@ public:
 private :
 	bool fin;
 	GrilleMorpion morpion;
+	void felicitation(int idJoueur);
 };
 
