@@ -3,44 +3,85 @@
 using namespace std;
 
 GrilleMorpion::GrilleMorpion() {
-	int grille[2][2] = { 0 };
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			this->grille[i][j] = 0;
+		}
+	}
 }
 
-bool GrilleMorpion::caseVide(int idCase){
-	switch (idCase)
-	{
-	case 1 :
-		return grille[0][0] == 0;
-	case 2:
-		return grille[0][1] == 0;
-	case 3:
-		return grille[0][2] == 0;
-	case 4:
-		return grille[1][0] == 0;
-	case 5:
-		return grille[1][1] == 0;
-	case 6:
-		return grille[1][2] == 0;
-	case 7:
-		return grille[2][0] == 0;
-	case 8:
-		return grille[2][1] == 0;
-	case 9:
-		return grille[2][2] == 0;
-	default:
-		break;
+bool GrilleMorpion::caseVide(int ligne, int colonne){
+	return grille[ligne][colonne] == 0;
+}
+
+bool GrilleMorpion::estPleine() {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (caseVide(i, j)) {
+				return false;
+			}
+		}
 	}
+	return true;
 }
 
 void GrilleMorpion::afficheGrille(){
 	cout << " ____ ____ ____" << endl;
 	cout << "|    |    |    |" << endl;
-	cout << "| " << grille[0][0] << "  | " << grille[0][1] << "  | " << grille[0][2] << "  |" << endl;
+	cout << "| " << this->grille[0][0] << "  | " << this->grille[0][1] << "  | " << this->grille[0][2] << "  |" << endl;
 	cout << "|____|____|____|" << endl;
-	cout << "| " << grille[1][0] << "  | " << grille[1][1] << "  | " << grille[1][2] << "  |" << endl;
+	cout << "| " << this->grille[1][0] << "  | " << this->grille[1][1] << "  | " << this->grille[1][2] << "  |" << endl;
 	cout << "|____|____|____|" << endl;
-	cout << "| " << grille[2][0] << "  | " << grille[2][1] << "  | " << grille[2][2] << "  |" << endl;
+	cout << "| " << grille[2][0] << "  | " << this->grille[2][1] << "  | " << this->grille[2][2] << "  |" << endl;
 	cout << "|    |    |    |" << endl;
 	cout << " ____ ____ ____" << endl;
 
+}
+
+bool GrilleMorpion::ligneComplete(int ligne, int idJoueur) {
+	for (int i = 0; i < 3; i++) {
+		if (grille[ligne][i] != idJoueur) {
+			return false;
+		}
+	}
+}
+
+bool GrilleMorpion::colonneComplete(int colonne, int idJoueur) {
+	for (int i = 0; i < 3; i++) {
+		if (grille[i][colonne] != idJoueur) {
+			return false;
+		}
+	}
+}
+
+bool GrilleMorpion::diagonaleComplete(int diagonale, int idJoueur) {
+	if (diagonale == 1) {
+		for (int i = 0; i < 3; i++) {
+			if (grille[i][i] != idJoueur) {
+				return false;
+			}
+		}
+		return true;
+	}
+	else if (diagonale == 2) {
+		int j = 2;
+		for (int i = 0; i < 3; i++) {
+			if (grille[i][j] != idJoueur) {
+				return false;
+			}
+		}
+		return true;
+	}
+}
+
+bool GrilleMorpion::victoireJoueur(int idJoueur) {
+	for (int i = 0; i < 3; i++) {
+		if (ligneComplete(i, idJoueur) || colonneComplete(i, idJoueur)) {
+			return true;
+		}
+	}
+	if (diagonaleComplete(1, idJoueur) || diagonaleComplete(2, idJoueur)) {
+		return true;
+	}
+	return false;
 }
