@@ -19,11 +19,9 @@ void Jeu::jeuMorpion(){
 		std::cin >> colonneJ;
 		morpion.ajoutJeton(ligneJ, colonneJ, 1);
 		morpion.afficheGrille();
-		
 		if (morpion.estPleine()) {
 			fin = true;
 		}
-
 		if (morpion.victoireJoueur(1)) {
 			fin = true;
 			felicitation(1);
@@ -40,7 +38,9 @@ void Jeu::jeuMorpion(){
 				fin = true;
 				felicitation(2);
 			}
-
+			if (morpion.estPleine()) {
+				fin = true;
+			}
 		}
 
 	}
