@@ -7,7 +7,7 @@ class Jeu
 {
 public:
 	Jeu();
-	void initMorpion();
+	void jeuMorpion();
 private :
 	bool fin;
 	GrilleMorpion morpion;

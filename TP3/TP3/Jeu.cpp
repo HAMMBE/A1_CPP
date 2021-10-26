@@ -1,21 +1,41 @@
 #include "Jeu.h"
 
-bool fin = false;
 
 Jeu::Jeu() {
-	initMorpion();
+	fin = false;
 }
 
-void Jeu::initMorpion() {
+
+void Jeu::jeuMorpion(){
+	int ligneJ;
+	int colonneJ;
 	morpion = GrilleMorpion();
 	morpion.afficheGrille();
-	std::cout << "dizn";
-	int x = 0;
-	int y = 0;
-	std::cout << "Entrer la ligne : ";
-	std::cin >> x;
-	std::cout << "Entre la colonne : ";
-	std::cin >> y;
-	morpion.ajoutJeton(x, y, 1);
-	morpion.afficheGrille();
+	while (!fin) {
+		std::cout << "Au tour du Joueur 1 : \n";
+		std::cout << "Insérrez la ligne (entre 0 et 2) : ";
+		std::cin >> ligneJ;
+		std::cout << "Insérrez la colonne (entre 0 et 2) : ";
+		std::cin >> colonneJ;
+		morpion.ajoutJeton(ligneJ, colonneJ, 1);
+		morpion.afficheGrille();
+		
+		if (morpion.victoireJoueur(1)) {
+			fin = true;
+
+		}else {
+			std::cout << "Au tour du Joueur 2 : \n";
+			std::cout << "Insérrez la ligne (entre 0 et 2) : ";
+			std::cin >> ligneJ;
+			std::cout << "Insérrez la colonne (entre 0 et 2) : ";
+			std::cin >> colonneJ;
+			morpion.ajoutJeton(ligneJ, colonneJ, 2);
+			morpion.afficheGrille();
+		}
+
+	}
+
+
 }
+
+

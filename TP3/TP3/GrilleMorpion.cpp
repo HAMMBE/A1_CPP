@@ -87,5 +87,13 @@ bool GrilleMorpion::victoireJoueur(int idJoueur) {
 }
 
 void GrilleMorpion::ajoutJeton(int ligne, int colonne, int idJoueur) {
+	
+	while (colonne > 2 || colonne < 0 || ligne > 2 || ligne < 0 || !caseVide(ligne, colonne)) {
+		std::cout << "Inserrez un chiffre entre 0 et 2 d'une case vide! \n";
+		std::cout << "Insérrez la ligne (entre 0 et 2) : ";
+		std::cin >> ligne;
+		std::cout << "Insérrez la colonne (entre 0 et 2) : ";
+		std::cin >> colonne;
+	}
 	grille[ligne][colonne] = idJoueur;
 }

@@ -11,6 +11,7 @@ int main()
     GrilleMorpion grille1 = GrilleMorpion();
     grille1.afficheGrille();
     Jeu jeu1 = Jeu();
+    jeu1.jeuMorpion();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
