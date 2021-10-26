@@ -78,9 +78,9 @@ bool GrilleP4::caseVide(int ligne, int colonne) {
 }
 
 void GrilleP4::ajoutJeton(int colonne, int idJoueur) {
-    while (colonne > 7 || colonne < 0 || colonnePleine(colonne)) {
+    while (colonne > 6 || colonne < 0 || colonnePleine(colonne)) {
         std::cout << "Inserrez un chiffre entre 0 et 2 d'une colonne non pleine! \n";
-        std::cout << "Insérrez la colonne (entre 0 et 7) : ";
+        std::cout << "Insérrez la colonne (entre 0 et 6) : ";
         std::cin >> colonne;
     }
     bool jetonPose = false;

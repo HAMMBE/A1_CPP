@@ -55,7 +55,8 @@ void Jeu::jeuP4(){
 	P4 = GrilleP4();
 	P4.afficheGrille();
 	while (!fin) {
-		std::cout << "Insérrez la colonne (entre 0 et 7) : ";
+		std::cout << "Au tour du Joueur 1 : \n";
+		std::cout << "Insérrez la colonne (entre 0 et 6) : ";
 		std::cin >> colonneJ;
 		P4.ajoutJeton(colonneJ, 1);
 		P4.afficheGrille();
@@ -69,7 +70,7 @@ void Jeu::jeuP4(){
 		}
 		else if (!fin) {
 			std::cout << "Au tour du Joueur 2 : \n";
-			std::cout << "Insérrez la colonne (entre 0 et 7) : ";
+			std::cout << "Insérrez la colonne (entre 0 et 6) : ";
 			std::cin >> colonneJ;
 			P4.ajoutJeton(colonneJ, 2);
 			P4.afficheGrille();
