@@ -2,6 +2,7 @@
 
 
 Jeu::Jeu() {
+	int jeulancer;
 	fin = false;
 }
 
